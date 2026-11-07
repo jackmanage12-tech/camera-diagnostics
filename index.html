@@ -126,5 +126,36 @@ async function startCamera() {
 }
 </script>
 
+ 
+<section id="obs-test" style="margin:24px 0;padding:16px;border:1px solid #aaa;border-radius:12px">
+  <h2>OBS / ManyCam Stream Test</h2>
+  <p>Compare this stream with your Samsung camera diagnostics.</p>
+
+  <label for="stream-url">MediaMTX stream address:</label>
+  <input id="stream-url" style="width:100%;padding:8px;box-sizing:border-box"
+         value="http://192.168.1.167:8889/manycam/">
+
+  <button type="button" onclick="openOBSStream()"
+          style="margin-top:12px;padding:10px">
+    Open OBS Stream
+  </button>
+
+  <p id="obs-status"></p>
+</section>
+
+<script>
+function openOBSStream() {
+  const url = document.getElementById("stream-url").value.trim();
+  if (!/^https?:\/\//i.test(url)) {
+    document.getElementById("obs-status").textContent =
+      "Enter a valid HTTP or HTTPS stream URL.";
+    return;
+  }
+  window.open(url, "_blank", "noopener");
+  document.getElementById("obs-status").textContent =
+    "Opened the OBS stream in a separate tab.";
+}
+</script>
+
 </body>
 </html>
