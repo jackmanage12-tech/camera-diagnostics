@@ -142,7 +142,25 @@ async function startCamera() {
 
   <p id="obs-status"></p>
 </section>
+ 
+<section id="comparison-test" style="margin:24px 0;padding:16px;border:1px solid #aaa;border-radius:12px">
+  <h2>Camera Source Comparison</h2>
+  <p>Compare the Samsung camera with the OBS stream.</p>
 
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+    <div>
+      <h3>Samsung Camera</h3>
+      <p>Use the Start Camera button above to view the native camera.</p>
+    </div>
+
+    <div>
+      <h3>OBS / ManyCam</h3>
+      <p>Open the network stream using the button above.</p>
+    </div>
+  </div>
+</section>
+
+ 
 <script>
 function openOBSStream() {
   const url = document.getElementById("stream-url").value.trim();
